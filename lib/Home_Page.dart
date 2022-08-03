@@ -32,7 +32,11 @@ class _HomePageState extends State<HomePage> {
               itemCount: snapshot.hasData?snapshot.data!.documents.length:0,
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
-                    leading: const Icon(Icons.list),
+                  // autofocus: true,
+                  contentPadding: EdgeInsets.all(10),
+                  // minVerticalPadding: 30,
+                   tileColor: Color.fromARGB(255, 76, 95, 189),
+                    leading: const Icon(Icons.person),
                     trailing:  Text(
                       snapshot.data!.documents[index].data['number'],
                       style: TextStyle(color: Colors.green, fontSize: 15),
@@ -43,42 +47,6 @@ class _HomePageState extends State<HomePage> {
               });
           }
         ),
-    //     body: Column(
-    //       crossAxisAlignment: CrossAxisAlignment.stretch,
-    //       children: [
-    //         Expanded(
-    //           child: GestureDetector(
-    //   onTap: () {
-    //             Navigator.push(
-    //               context, MaterialPageRoute(builder: (context) => EditContacts(),));
-    //           },
-    //   child: ListView(
-    //     padding: const EdgeInsets.all(8),
-    //   children: <Widget>[
-    //   Container(
-    //     height: 75,
-    //     color: Color.fromARGB(255, 172, 176, 197),
-    //     child: const Center(child: Text('Anojan')),
-    //   ),
-    //   SizedBox(height: 15,),
-    //   Container(
-    //     height: 75,
-    //     color: Color.fromARGB(255, 172, 176, 197),
-    //     child: const Center(child: Text('Kandee')),
-    //   ),
-    //    SizedBox(height: 15,),
-    //   Container(
-    //     height: 75,
-    //     color: Color.fromARGB(255, 172, 176, 197),
-    //     child: const Center(child: Text('Thusa')),
-    //   ),
-    //   ],
-    //   ),
-      
-    // ), )
-    //       ],
-          
-    //     ),
     );
     
     
