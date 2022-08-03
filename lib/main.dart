@@ -14,24 +14,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // darkTheme: ThemeData(backgroundColor: Colors.black),
       debugShowCheckedModeBanner:false,
-      home:Scaffold(
-        appBar: AppBar(
-          title: Text('Contacts App'),
-          centerTitle: true,
-        ),
-        floatingActionButton: FloatingActionButton(
-         onPressed:(){
-        Navigator.push(context, MaterialPageRoute(builder: (_)=>AddContacts()));
-      },
-          child: Icon(Icons.add),
-          // backgroundColor: Colors.blueAccent,
-        ),
-       
-        body: HomePage(),
-        // backgroundColor: Colors.black12,
-        )
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF0A0E21),
+        scaffoldBackgroundColor: Color(0xFF0A0E21),
+      ),
+      home: HomePage(),
+      // home:Scaffold(
+      //   appBar: AppBar(
+      //     title: Text('Contacts App'),
+      //     centerTitle: true,
+      //   ),
+      //   floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.add),
+      //   onPressed:(){
+      //   Navigator.push(context, MaterialPageRoute(builder: (context)=>AddContacts()));
+      // },
+      //   ),
+      //  body: HomePage(),
+      //   )
       
     );
   }
