@@ -31,19 +31,25 @@ class _HomePageState extends State<HomePage> {
             return ListView.builder(
               itemCount: snapshot.hasData?snapshot.data!.documents.length:0,
               itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  // autofocus: true,
-                  contentPadding: EdgeInsets.all(10),
-                  // minVerticalPadding: 30,
-                   tileColor: Color.fromARGB(255, 76, 95, 189),
-                    leading: const Icon(Icons.person),
-                    trailing:  Text(
-                      snapshot.data!.documents[index].data['number'],
-                      style: TextStyle(color: Colors.green, fontSize: 15),
-                    ),
-                    title: Text(
-                      snapshot.data!.documents[index].data['name']
-                    ));
+                return GestureDetector(
+                   onTap: (){
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => EditContacts(docToEdit: snapshot.data!.documents[index],),));
+              },
+                  child: ListTile(
+                    // autofocus: true,
+                    contentPadding: EdgeInsets.all(10),
+                    // minVerticalPadding: 30,
+                     tileColor: Color.fromARGB(255, 76, 95, 189),
+                      leading: const Icon(Icons.person),
+                      trailing:  Text(
+                        snapshot.data!.documents[index].data['number'],
+                        style: TextStyle(color: Colors.green, fontSize: 15),
+                      ),
+                      title: Text(
+                        snapshot.data!.documents[index].data['name']
+                      )),
+                );
               });
           }
         ),
